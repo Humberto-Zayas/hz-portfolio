@@ -58,7 +58,10 @@
       </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container fluid>
+      <v-container class="pa-0" fluid>
+        <template>
+          <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
+        </template>
         <nuxt />
       </v-container>
     </v-main>
