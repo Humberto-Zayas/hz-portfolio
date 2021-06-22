@@ -1,13 +1,11 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row fluid justify="center" align="center">
     <v-col cols="12" sm="8" md="12">
       <!-- <div class="text-center">
         <logo />
         <vuetify-logo />
       </div> -->
-      <template>
-        <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
-      </template>
+
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
