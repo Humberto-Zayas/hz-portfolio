@@ -60,7 +60,7 @@
     <v-main>
       <v-container class="pa-0" fluid>
         <template>
-          <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
+          <v-parallax src="/img/hz-bpr-hd.jpg" />
         </template>
         <nuxt />
       </v-container>
