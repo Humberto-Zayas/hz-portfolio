@@ -59,9 +59,13 @@
     </v-app-bar>
     <v-main>
       <v-container class="pa-0" fluid>
-        <template>
-          <v-parallax src="/img/hz-bpr-hd.jpg" />
-        </template>
+        <v-parallax src="/img/hz-bpr-hd.jpg">
+          <div class="text-center">
+            <h1>Humberto Zayas</h1>
+            <h2>Front End Developer</h2>
+          </div>
+        </v-parallax>
+
         <nuxt />
       </v-container>
     </v-main>

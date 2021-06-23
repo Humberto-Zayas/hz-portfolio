@@ -1,79 +1,132 @@
 <template>
   <v-row fluid justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
+    <v-col cols="12" sm="8" md="9">
       <!-- <div class="text-center">
         <logo />
         <vuetify-logo />
       </div> -->
+      <v-spacer />
 
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
+      <section>
+        <v-row>
+          <v-col>
+            <h3 class="text-center">
+              About Me
+            </h3>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col sm="2">
+            Icons
+          </v-col>
+          <v-col sm="10">
+            <p>
+              Entrepreneurial self-starter in the process of learning Node and Angular. Currently seeking a Front-end Web Developer position where I can use my strengths in HTML, CSS, SCSS and JS to create modern web pages and intuitive UI. My biggest passions building for the web are combining design with the world of development, creating DRY and reusable code and learning about new updates and technology to better my workflow and knowledge. I am also a creative individual who enjoys working with Adobe Creative Suite and various audio and sound design software.
+            </p>
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-row>
+          <v-col>
+            <h3 class="text-center">
+              My Recent Work
+            </h3>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <v-sheet
+              class="mx-auto"
+              elevation="8"
             >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+              <v-slide-group
+                v-model="model"
+                class="pa-4"
+                show-arrows
+                center-active
+              >
+                <v-slide-item
+                  v-for="n in 15"
+                  :key="n"
+                  v-slot="{ active, toggle }"
+                >
+                  <v-card
+                    :color="active ? 'primary' : 'grey lighten-1'"
+                    class="ma-4"
+                    height="200"
+                    width="300"
+                    @click="toggle"
+                  >
+                    <v-row
+                      class="fill-height"
+                      align="center"
+                      justify="center"
+                    >
+                      <v-scale-transition>
+                        <v-icon
+                          v-if="active"
+                          color="white"
+                          size="48"
+                          v-text="'mdi-close-circle-outline'"
+                        />
+                      </v-scale-transition>
+                    </v-row>
+                  </v-card>
+                </v-slide-item>
+              </v-slide-group>
+
+              <v-expand-transition>
+                <v-sheet
+                  v-if="model != null"
+                  height="200"
+                  tile
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <h3 class="text-h6">
+                      Selected {{ model }}
+                    </h3>
+                  </v-row>
+                </v-sheet>
+              </v-expand-transition>
+            </v-sheet>
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-row>
+          <v-col>
+            <h3 class="text-center">
+              Skills and Technologies
+            </h3>
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-row>
+          <v-col>
+            <h3 class="text-center">
+              Professional Experience
+            </h3>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col />
+          <v-col />
+        </v-row>
+      </section>
     </v-col>
+  </v-row>
+  </section>
+  </v-col>
   </v-row>
 </template>
 
@@ -86,5 +139,8 @@ export default {
   //   Logo,
   //   VuetifyLogo
   // }
+  data: () => ({
+    model: null
+  })
 }
 </script>
